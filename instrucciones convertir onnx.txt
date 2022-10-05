@@ -1,0 +1,2 @@
+python3 onnx_export.py --model-dir=models/fruit
+$ detectnet --model=models/fruit/ssd-mobilenet.onnx --labels=models/fruit/labels.txt --input-blob=input_0 --output-cvg=scores --output-bbox=boxes /dev/video0
