@@ -1,0 +1,36 @@
+descargar este repositorio
+https://github.com/ultralytics/yolov5
+instalar phyton la ultima version para windows
+https://www.python.org/downloads/
+si tiene tarjeta grafica instalar cuda
+https://developer.nvidia.com/cuda-downloads
+instalar pytorch
+https://pytorch.org/get-started/locally/
+
+py -m pip install torch torchvision torchaudio
+
+en las dos anteriores seleccionar en las paginas las configuraciones
+
+ir a la carpeta de yolo5 que se descargo en el primer paso y dar
+pip install -r requirements.txt
+o
+py -m pip install -r requirements.txt
+
+si sale error de cooco o algo asi ir a la pagina de visual studio y escoger como en la imagen solo c++ build fijarse en el icono y otra que tiene el mismo icono pero dice algo como c++ mobile
+
+despues otra vez
+py -m pip install -r requirements.txt
+
+y listo
+
+ojo si acaso no sirve aun
+py -m pip install git+https:﻿//github.com/philferriere/cocoapi.git#subdirectory=PythonAPI
+o descargar el repositorio y correr en el directorio PythonAPI, setup.py
+
+py detect.py --source 0
+
+py train.py --img 640 --batch 1 --epochs 300 --data data.yaml --weights yolov5m.pt --cache
+
+py detect.py --weights pedu5n.pt --img 640 --conf 0.8 --source 1 
+
+py setup.py
