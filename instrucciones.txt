@@ -116,6 +116,7 @@ pip3 list
 con este comando se prueba que ya este detectando
 cd yolov5
 python3 detect.py 
+python3 detect3.py --weights best.pt --img 640 --conf 0.8 --source 1 --nosave
 
 ************************************************************************************************
 Para conectarse por VNC
