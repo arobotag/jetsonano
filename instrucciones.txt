@@ -118,7 +118,21 @@ cd yolov5
 python3 detect.py 
 
 ************************************************************************************************
+Para conectarse por VNC
 
+cd /usr/lib/systemd/user/graphical-session.target.wants
+sudo ln -s ../vino-server.service ./.
+gsettings set org.gnome.Vino prompt-enabled false
+gsettings set org.gnome.Vino require-encryption false
+# Replace thepassword with your desired password
+gsettings set org.gnome.Vino authentication-methods "['vnc']"
+gsettings set org.gnome.Vino vnc-password $(echo -n 'neobomba'|base64)
+sudo reboot
+
+Luego ir a tools ahi esta VNC o desde el esrtitorio remoto de windows.
+
+
+*****************************************************************************************************
 https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-ml
 
 https://pytorch.org/blog/running-pytorch-models-on-jetson-nano/
