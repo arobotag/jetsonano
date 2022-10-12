@@ -13,6 +13,10 @@ https://drive.google.com/drive/folders/1SsOBNiWl1RLZnkq3Stcjiv79DLPZj-TU
 
 3. Abrir la maquina virtual.
 
+sudo apt update
+apt list --upgradable
+sudo apt upgrade
+
 Seguir las intrucciones del pdf Instalación de JetPack sin problemas de almacenamiento
 
 poner le jumper en los pines 2 y 3 de la jetson nano para ponerla en modo instalacion
