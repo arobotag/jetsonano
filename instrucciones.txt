@@ -39,22 +39,27 @@ cat /etc/nv_tegra_release on board
 version 32 6.1 jectpack 4.6
 sudo pip3 install jetson-stats
 jetson_release -v
+sudo jtop
 
-JetPack 4.6 (L4T R32.6.1)
-•	l4t-ml:r32.6.1-py3
-•	TensorFlow 1.15.5
-•	PyTorch v1.9.0
-•	torchvision v0.10.0
-•	torchaudio v0.9.0
-•	onnx 1.8.0
-•	CuPy 8.0.0
-•	numpy 1.19.5
-•	numba 0.53.1
-•	OpenCV 4.4.0 (with CUDA)
-•	pandas 1.1.5
-•	scipy 1.5.4
-•	scikit-learn 0.23.2
-•	JupyterLab 2.2.9
+la version mas actual para nano es la 4.6.2, qu es la misma que la 4.6.1, tenero en cunta para la instalacion de torch y torchvision esta es la pagina de las versiones
+https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-ml
+
+JetPack 4.6.1 (L4T R32.7.1)
+
+l4t-ml:r32.7.1-py3
+TensorFlow 1.15.5
+PyTorch v1.10.0
+torchvision v0.11.0
+torchaudio v0.10.0
+onnx 1.11.0
+CuPy 9.2.0
+numpy 1.19.5
+numba 0.53.1
+OpenCV 4.5.0 (with CUDA)
+pandas 1.1.5
+scipy 1.5.4
+scikit-learn 0.24.2
+JupyterLab 2.2.9
 
 ************************************************************************************************
 instalar lo de yolov5
@@ -78,25 +83,21 @@ pip3 install -r requirements.txt
 esto debe salir bien sin errores, sino mirar que paso se omitio o que no se esta instalado.
 reiniciar la maquina y probar con
 
-cd yolov5
 
-python3 detect.py --weights yolov5s.pt --img 640 --conf 0.5 --source 1 
-
-python3 detect.py --weights last77.pt --img 640 --conf 0.5 --source 1 
 
 
 ***********************************************************************************************
 instalar pytorch y touchvision
 
-buscar en la pagina nvidia la version 1.9
+buscar en la pagina nvidia la version 1.10.0 esto depende de la version de jetcpack, revisar con la de arriba en la poagina de nvidia, luego abrir esta pagina
 https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048
 descargar el archivo
-torch-1.9.0-cp36-cp36m-linux_aarch64.whl
+torch-1.10.0-cp36-cp36m-linux_aarch64.whl
 pasarlo a home de download a home
 
 sudo apt-get install python3-pip libopenblas-base libopenmpi-dev libomp-dev
 pip3 install Cython
-pip3 install numpy torch-1.9.0-cp36-cp36m-linux_aarch64.whl
+pip3 install numpy torch-1.10.0-cp36-cp36m-linux_aarch64.whl
 
 sudo apt-get install libjpeg-dev zlib1g-dev libpython3-dev libavcodec-dev libavformat-dev libswscale-dev
 git clone --branch v0.10.0 https://github.com/pytorch/vision torchvision
@@ -117,6 +118,8 @@ con este comando se prueba que ya este detectando
 cd yolov5
 python3 detect.py 
 python3 detect3.py --weights best.pt --img 640 --conf 0.8 --source 1 --nosave
+python3 detect.py --weights yolov5s.pt --img 640 --conf 0.5 --source 1 
+python3 detect.py --weights last77.pt --img 640 --conf 0.5 --source 1 
 
 ************************************************************************************************
 Para conectarse por VNC
@@ -134,7 +137,7 @@ Luego ir a tools ahi esta VNC o desde el esrtitorio remoto de windows.
 
 
 *****************************************************************************************************
-https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-ml
+
 
 https://pytorch.org/blog/running-pytorch-models-on-jetson-nano/
 https://cloudpark93.github.io/yolov5-jetson-nano-tips-errors/
