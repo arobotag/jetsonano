@@ -64,6 +64,10 @@ JupyterLab 2.2.9
 ************************************************************************************************
 instalar lo de yolov5
 
+sudo apt purge --remove chromium-browser -y
+si este no sirve sudo snap remove chromium
+sudo apt autoremove
+sudo apt autoclean -y
 sudo apt update
 sudo apt install -y python3-pip
 pip3 install --upgrade pip
@@ -79,6 +83,9 @@ comentar
 # torchvision>=0.8.1
 sudo apt install -y libfreetype6-dev
 pip3 install -r requirements.txt
+sudo apt autoremove -y
+df -h
+sudo apt clean
 
 esto debe salir bien sin errores, sino mirar que paso se omitio o que no se esta instalado.
 reiniciar la maquina y probar con
