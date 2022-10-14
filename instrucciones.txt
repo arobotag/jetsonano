@@ -17,7 +17,7 @@ sudo apt update
 apt list --upgradable
 sudo apt upgrade
 
-Seguir las intrucciones del pdf Instalación de JetPack sin problemas de almacenamiento
+Seguir las intrucciones del pdf Instalación de JetPack sin problemas de almacenamiento e instalando de una vez deepstream
 
 poner le jumper en los pines 2 y 3 de la jetson nano para ponerla en modo instalacion
 
@@ -62,12 +62,34 @@ scikit-learn 0.23.2
 JupyterLab 2.2.9
 
 ************************************************************************************************
-quitar chormium
+seguir pásos del dosuemnto easy free 40% o lo de acontnuacion
 
-sudo apt purge --remove chromium-browser -y
-si este no sirve sudo snap remove chromium
-sudo apt autoremove
+sudo apt update
+sudo apt autoremove -y
 sudo apt autoclean -y
+sudo apt clean
+sudo apt remove thunderbird libreoffice-* -y
+sudo rm -rf /usr/local/cuda/samples \
+luego en la linea > poner
+/usr/src/cudnn_samples_* \
+/usr/src/tensorrt/data \
+/usr/src/tensorrt/samples \
+/usr/share/visionworks* ~/VisionWorks-SFM*Samples \
+/opt/nvidia/deepstream/deepstream*/samples
+
+sudo apt purge cuda-repo-l4t-local libvisionworks-repo -y
+sudo rm /etc/apt/sources.list.d/cuda*local /etc/apt/sources.list.d/visionworks*repo*
+sudo rm -rf /usr/src/linux-headers-*
+sudo apt-get purge gnome-shell ubuntu-wallpapers-bionic light-themes chromium-browser* libvisionworks libvisionworks-sfm-dev -y
+sudo apt-get autoremove -y
+sudo apt clean -y
+
+sudo rm -rf /usr/local/cuda/targets/aarch64-linux/lib/.a \
+/usr/lib/aarch64-linux-gnu/libcudnn.a \
+/usr/lib/aarch64-linux-gnu/libnvcaffe_parser*.a \
+/usr/lib/aarch64-linux-gnu/libnvinfer*.a \
+/usr/lib/aarch64-linux-gnu/libnvonnxparser*.a \
+/usr/lib/aarch64-linux-gnu/libnvparsers*.a
 
 instalar lo de yolov5
 
